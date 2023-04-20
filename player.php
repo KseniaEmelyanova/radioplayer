@@ -4,7 +4,7 @@ include "./api/api.php";
 <!DOCTYPE html>
 <head>
     <title>PlayerTest</title>
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <div class="card">
