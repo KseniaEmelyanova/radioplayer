@@ -1,8 +1,8 @@
 <?php
 
-include "settings.php"; 
+include __DIR__.'/settings.php'; 
 
-$Json = file_get_contents("https://".$lclink.":".$lcport."/".$lcapilink."/servers/?format=json");
+$Json = file_get_contents($lcapicom ."/servers/?format=json");
 $myarray = json_decode($Json, true);
 
 foreach($myarray AS $value) {
@@ -16,7 +16,7 @@ foreach($myarray AS $value) {
 
 }
 
-$Json = file_get_contents("https://".$lclink.":".$lcport."/".$lcapilink."/channels/?format=json");
+$Json = file_get_contents($lcapicom ."/channels/?format=json");
 $myarray = json_decode($Json, true);
 
 foreach($myarray AS $value) {
@@ -47,11 +47,11 @@ foreach($myarray AS $value) {
     
 }
 
-$Json = file_get_contents("https://".$lclink.":".$lcport."/".$lcapilink."/history/?format=json");
+$Json = file_get_contents($lcapicom ."/history/?format=json");
 $myarray = json_decode($Json, true);
 
 foreach($myarray AS $value) {
-    if ($value["id"] == $myarray[0]["id"] && $value["server"] !== 2) {
+    if ($value["id"] == $myarray[0]["id"]) {
         $titleonair = $value["metadata"]; 
         $titlepic = $value["img_url"]; 
         $votid = $value["all_music_id"];
@@ -60,7 +60,7 @@ foreach($myarray AS $value) {
      
 }
 
-$Json = file_get_contents("https://".$lclink.":".$lcport."/".$lcapilink."/djs/?format=json");
+$Json = file_get_contents($lcapicom ."/djs/?format=json");
 $myarray = json_decode($Json, true);
 
 foreach($myarray AS $value) {
@@ -72,4 +72,3 @@ foreach($myarray AS $value) {
       
 }
 
-?>
