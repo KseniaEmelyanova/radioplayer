@@ -1,5 +1,6 @@
 <?php
-include "./api/api.php";
+include __DIR__.'/api/api.php'; 
+
 ?>
 <!DOCTYPE html>
 <head>
