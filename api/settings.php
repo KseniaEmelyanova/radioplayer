@@ -8,4 +8,3 @@ $lcapicom = 'https://' . $lclink . ':' . $lcport . $lcapilink ;
 $lclp = 'https://' . $lclink . ':' . $lcport ;
 
 ?>
-test
